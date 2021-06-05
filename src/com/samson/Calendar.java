@@ -1,5 +1,7 @@
 package src.com.samson;
 
+import java.util.List;
+
 /*
 Features
 
@@ -13,5 +15,9 @@ Features
 - State management of meeting (Busy, Free, Available, Out of Office)
 */
 public class Calendar {
-    
+    protected List<CalendarMeeting> meetings;
+    protected List<CalendarHoliday> holidays;
+    protected List<CalendarReminder> reminders;
+    protected List<CalendarBirthday> birthdays;
+    protected CalendarAddressBook addressBook;
 }

@@ -8,16 +8,16 @@ package src.com.samson;
 - Name
 - Location (Etc. Building #2, Virtual)
 */
-public class Room {
+public class MeetingRoom {
     
     private String name, id;
     // Comma delimited list of people that have access to room (bookable)
     private String acl; 
 
-    private Locations location;
+    private MeetingLocations location;
 
     // Constructor
-    public Room(String name, Locations location) {
+    public MeetingRoom(String name, MeetingLocations location) {
         this.name = name;
         this.id = name;
         this.location = location;
@@ -42,7 +42,7 @@ public class Room {
         return this.id;
     }
 
-    public Locations getLocations(){
+    public MeetingLocations getLocations(){
         return this.location;
     }
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>src.com.samson.CalendarEvent</OriginalElement>
+  <nodes>
+    <node x="276.0" y="-203.0">src.com.samson.Locations</node>
+    <node x="-313.0" y="320.0">src.com.samson.CalendarReminder</node>
+    <node x="-118.0" y="320.0">src.com.samson.CalendarHoliday</node>
+    <node x="-308.5" y="426.0">src.com.samson.CalendarBirthday</node>
+    <node x="278.0" y="37.0">src.com.samson.Room</node>
+    <node x="-137.0" y="-203.0">src.com.samson.Reoccurence</node>
+    <node x="65.0" y="320.0">src.com.samson.CalendarMeeting</node>
+    <node x="-104.0" y="527.0">src.com.samson.AddressBook</node>
+    <node x="-141.0" y="59.0">src.com.samson.CalendarEvent</node>
+    <node x="80.0" y="527.0">src.com.samson.Calendar</node>
+    <node x="-313.0" y="527.0">src.com.samson.Person</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="src.com.samson.Room" target="src.com.samson.Locations" relationship="TO_ONE">
+      <point x="0.0" y="-84.0" />
+      <point x="0.0" y="95.0" />
+    </edge>
+    <edge source="src.com.samson.CalendarEvent" target="src.com.samson.Reoccurence" relationship="TO_ONE">
+      <point x="0.0" y="-105.5" />
+      <point x="0.0" y="106.0" />
+    </edge>
+    <edge source="src.com.samson.CalendarMeeting" target="src.com.samson.CalendarEvent" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="148.0" y="295.0" />
+      <point x="-36.5" y="295.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="src.com.samson.CalendarBirthday" target="src.com.samson.CalendarReminder" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="src.com.samson.CalendarReminder" target="src.com.samson.CalendarEvent" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="-225.5" y="295.0" />
+      <point x="-36.5" y="295.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="src.com.samson.CalendarHoliday" target="src.com.samson.CalendarEvent" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="src.com.samson.Room" target="src.com.samson.Locations" relationship="DEPENDENCY">
+      <point x="15.0" y="-84.0" />
+      <point x="15.0" y="95.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="73.5" y="223.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -6,7 +6,7 @@ package src.com.samson;
  - Name (First/Last Name)
  - Person Identifier Id (UUID/GUID)
 */
-public class Person {
+public class Contact {
     //public -> All access from any class or methods
     //private -> Restricted to the current class
     //protected -> Only accessible by current class and child class
@@ -16,7 +16,7 @@ public class Person {
     private String id;
 
     // Constructor
-    public Person(String firstName, String lastName){
+    public Contact(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = firstName + lastName;
