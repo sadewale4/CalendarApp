@@ -5,13 +5,14 @@ import java.util.Date;
 public abstract class CalendarEvent {
     Date eventDate;
     protected String name, description;
-    boolean allDay;
+    protected boolean allDay;
 
     Reoccurence reoccurence;
     Date reoccurenceEndDate;
     Date getReoccurenceStartDate;
 
-    protected CalendarEvent(String Name, Date eventDate){
-
+    protected CalendarEvent(String name, Date eventDate){
+        this.name = name;
+        this.eventDate = eventDate;
     }
 }

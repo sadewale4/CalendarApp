@@ -1,10 +1,15 @@
 package src.com.samson;
 
+import java.util.Date;
+
 class Test {
 
 
     public static void main(String[] args) {
-        TestAnotherClass obj = new TestAnotherClass(100);
-        System.out.println("Hello world Test" + obj.getData());
+        Calendar calendar = new Calendar();
+        calendar.addMeeting(new CalendarMeeting("Test Meeting", new Date(), new Date()));
+        CalendarMeeting meeting = calendar.getMeetings().get(0);
+        System.out.println(meeting);
+        System.out.println(meeting.getStartDate());
     }
 }
