@@ -29,20 +29,35 @@ public class Calendar {
     //Constructor
     public Calendar(){
         meetings = new ArrayList<>();
-
+        startEndDateValidator = new StartEndDateValidator();
     }
 
     /**
     * Add new meeting
     * @param meeting new meeting to add to calendar
      */
-    public ValidationResult addMeeting(CalendarMeeting meeting){
+
+    public ValidationResult addMeeting(CalendarMeeting meeting, boolean override){
         //validate meeting for time conflict
+        List<CalendarMeeting> meetings = new ArrayList<>();
+        meetings.addAll(this.meetings);
+
+        // Create a Meeting.getattendees
+        for(Contact contact : meeting.meetingAttendees){
+            //call data store to get contact meeting by contact ID and add it to meeting list
+        }
+
         ValidationResult result = startEndDateValidator.validate(meetings, meeting);
-        if (result.getState() == ValidationState.Success) {
+        if (result.getState() == ValidationState.Success || override) {
             meetings.add(meeting);
         }
+
         return result;
+    }
+
+    //This is how you do method override
+    public ValidationResult addMeeting(CalendarMeeting meeting){
+        return addMeeting(meeting, false);
     }
 
     //Getter for meetings

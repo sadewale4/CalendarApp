@@ -3,13 +3,13 @@ package src.com.samson;
 import java.util.Date;
 
 public abstract class CalendarEvent {
-    Date eventDate;
+    protected Date eventDate;
     protected String name, description;
     protected boolean allDay;
 
-    Reoccurence reoccurence;
-    Date reoccurenceEndDate;
-    Date getReoccurenceStartDate;
+    protected Reoccurence reoccurence;
+    protected Date reoccurenceEndDate;
+    protected Date getReoccurenceStartDate;
 
     protected CalendarEvent(String name, Date eventDate){
         this.name = name;
