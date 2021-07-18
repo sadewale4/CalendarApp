@@ -1,5 +1,6 @@
 package src.com.samson;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class CalendarMeeting extends CalendarEvent{
     public CalendarMeeting(String name, Date startDate, Date endDate){
         super(name, startDate);
         this.endDate = endDate;
+        this.meetingAttendees = new ArrayList<>();
     }
 
     public Date getEndDate() {

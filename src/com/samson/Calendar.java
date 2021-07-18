@@ -1,9 +1,6 @@
 package src.com.samson;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /*
 Features
@@ -45,6 +42,10 @@ public class Calendar {
         // Create a Meeting.getattendees
         for(Contact contact : meeting.meetingAttendees){
             //call data store to get contact meeting by contact ID and add it to meeting list
+            Calendar calendar = CalendarDataStore.getInstance().getCalendar(contact.getId());
+            if(calendar != null){
+                meetings.addAll(calendar.getMeetings(meeting.getStartDate(), meeting.getEndDate()));
+            }
         }
 
         ValidationResult result = startEndDateValidator.validate(meetings, meeting);
@@ -64,4 +65,17 @@ public class Calendar {
     public List<CalendarMeeting> getMeetings() {
         return Collections.unmodifiableList(meetings);
     }
+
+    //Getter for meetings
+    public List<CalendarMeeting> getMeetings(Date startDate, Date endDate) {
+        //To Do = Filter meeting that falls between the start and end date
+        List<CalendarMeeting> meetings = new ArrayList<>();
+        for(CalendarMeeting meeting : this.meetings){
+            //Logic for filtering for start (Draw it out prior to writing code
+            meetings.add(meeting);
+        }
+
+        return Collections.unmodifiableList(meetings);
+    }
+
 }

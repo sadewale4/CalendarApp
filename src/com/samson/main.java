@@ -16,12 +16,16 @@ class Program {
     }
 
     public static void main(String[] args) throws ParseException {
+        CalendarDataStore.getInstance().setDefaultContact("Sam");
+        CalendarDataStore.getInstance().registerCalendar("Sam");
+        CalendarDataStore.getInstance().registerCalendar("TJ");
+        CalendarDataStore.getInstance().registerCalendar("Frank");
         //testConflict();
         testOverride();
     }
 
     public static void testConflict() throws ParseException {
-        Calendar calendar = new Calendar();
+        Calendar calendar = CalendarDataStore.getInstance().getDefault();
         ValidationResult result1 = calendar.addMeeting(new CalendarMeeting("Meeting 1", formatter.parse("01-22-2015 10:00:00 AM"),
                 formatter.parse("01-22-2015 11:00:00 AM")));
 
@@ -39,7 +43,7 @@ class Program {
     }
 
     public static void testOverride() throws ParseException{
-        Calendar calendar = new Calendar();
+        Calendar calendar = CalendarDataStore.getInstance().getDefault();
         ValidationResult result1 = calendar.addMeeting(new CalendarMeeting("Meeting 1", formatter.parse("01-22-2015 10:00:00 AM"),
                 formatter.parse("01-22-2015 11:00:00 AM")));
 
