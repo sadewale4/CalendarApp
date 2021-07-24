@@ -16,6 +16,7 @@ Features
 */
 
 public class Calendar {
+
     protected List<CalendarMeeting> meetings;
     protected List<CalendarHoliday> holidays;
     protected List<CalendarReminder> reminders;
@@ -26,6 +27,7 @@ public class Calendar {
     //Constructor
     public Calendar(){
         meetings = new ArrayList<>();
+        holidays = new ArrayList<>();
         startEndDateValidator = new StartEndDateValidator();
     }
 
@@ -70,8 +72,23 @@ public class Calendar {
     public List<CalendarMeeting> getMeetings(Date startDate, Date endDate) {
         //To Do = Filter meeting that falls between the start and end date
         List<CalendarMeeting> meetings = new ArrayList<>();
+
+        Date start = new Date(startDate.getYear(), startDate.getMonth(),startDate.getDate());
+        Date end = new Date(endDate.getYear(), endDate.getMonth(), endDate.getDate(), 23, 59, 0);
+        //Increase End date by Days Ahead
+        //end = end
+
         for(CalendarMeeting meeting : this.meetings){
-            //Logic for filtering for start (Draw it out prior to writing code
+            //Logic for filtering for start (Draw it out prior to writing code)
+
+            //Skip Conditions
+            //If meeting startdate >= start & allday = true & end <= meeting enddate
+
+            //Add Conditions
+            //If meeting startdate >= start & allday = false & meeting enddate <= end
+
+
+
             meetings.add(meeting);
         }
 

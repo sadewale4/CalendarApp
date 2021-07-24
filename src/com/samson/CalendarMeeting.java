@@ -21,6 +21,12 @@ public class CalendarMeeting extends CalendarEvent{
         this.meetingAttendees = new ArrayList<>();
     }
 
+    public CalendarMeeting(String name, Date startDate, Date endDate, boolean allDay){
+        this(name, startDate, endDate);
+        this.allDay = allDay;
+    }
+
+    //getters and setters
     public Date getEndDate() {
         return endDate;
     }
@@ -56,5 +62,4 @@ public class CalendarMeeting extends CalendarEvent{
                 '}';
     }
 
-    //getter and setter
 }

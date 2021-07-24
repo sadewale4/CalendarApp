@@ -33,10 +33,10 @@ class Program {
                 formatter.parse("01-22-2015 01:00:00 PM")));
 
         ValidationResult result3 = calendar.addMeeting(new CalendarMeeting("Meeting 3", formatter.parse("01-22-2015 01:00:00 PM"),
-                formatter.parse("01-22-2015 02:00:00 PM")));
+                formatter.parse("01-22-2015 02:00:00 PM"), true));
 
         ValidationResult result4 = calendar.addMeeting(new CalendarMeeting("Meeting 4", formatter.parse("01-22-2015 01:00:00 PM"),
-                formatter.parse("01-22-2015 02:00:00 PM")));
+                formatter.parse("01-22-2015 02:00:00 PM"), true));
 
         System.out.println(String.format("Meetings should be %d equals 3", calendar.getMeetings().size()));
         System.out.println(String.format("Meeting 4 should conflict with meeting 3: %s", result4.getState()));

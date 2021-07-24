@@ -15,4 +15,8 @@ public abstract class CalendarEvent {
         this.name = name;
         this.eventDate = eventDate;
     }
+
+    public boolean isAllDay() {
+        return allDay;
+    }
 }
